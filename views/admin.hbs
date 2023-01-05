@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Admin Panel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/admin">All Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/admin/users">All Users</a>
+        </li>
+      </ul>
+      <div class="nav-item">
+        <big>Logged in as Admin </big>
+        <big><a href="/logout" class="text-decoration-none btn btn-secondary">Logout</a></big>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/admin/add-product" class="btn btn-dark my-4">Add new product</a>
+  <a href="/admin/users" class="btn btn-dark my-4">Users</a>
+  <table class="table" id="productsTable">
+    <thead>
+      <tr class="text-light bg-secondary">
+        <th scope="col"></th>
+        <th scope="col">Title</th>
+        <th scope="col">Category</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Image</th>
+        <th scope="col">Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each products}}
+      <tr>
+        <th scope="row"></th>
+        <td class="fw-bold">{{this.Name}}</td>
+        <td>{{this.Category}}</td>
+        <td>{{this.Description}}</td>
+        <td>{{this.Price}}</td>
+        <td><img src="http://localhost:3005/{{this._id}}.jpg" alt="" style="width:50px;height:50px;"></td>
+        <td>
+          <a href="/admin/edit-product/{{this._id}}" class="btn btn-primary m-1">Edit</a>
+          <a href="/admin/delete-product/{{this._id}}" class="btn btn-danger m-1"
+            onclick="return confirm('Are you sure to delete {{this.Name}}')">Delete</a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+{{!-- <script>
+  $(function () {
+    $('#productsTable').DataTable();
+  });
+</script> --}}

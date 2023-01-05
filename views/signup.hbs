@@ -1,0 +1,24 @@
+<!-- heading -->
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Signup page</span>
+  </div>
+</nav>
+<form class="container py-5 my-5" method="post" action="/signup">
+  <div class="mb-3">
+    <label for="name" class="form-label">User Name</label>
+    <input type="text" name="name" id="userName" class="form-control" required>
+    <label for="InputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="InputEmail1" name="email" aria-describedby="emailHelp" required>
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="InputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" name="password" id="InputPassword1" required>
+  </div>
+  <button type="submit" class="btn btn-primary">
+    Submit
+  </button>
+  <a href="/" class="px-4 text-decoration-none">Already have an account</a>
+
+</form>

@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Admin Panel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/admin">All Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/admin/users">All Users</a>
+        </li>
+      </ul>
+      <div class="nav-item">
+        <big>Logged in as Admin </big>
+        <big><a href="/logout" class="text-decoration-none btn btn-secondary">Logout</a></big>
+      </div>
+      {{!-- <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> --}}
+    </div>
+  </div>
+</nav>
+<div class="container m-5">
+    <a href="/admin" class="btn btn-secondary mb-5">Back to Products</a>
+    <a href="/signup" class="btn btn-dark mb-5">Add new User</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+            <tr>
+                <th scope="row"></th>
+                <td>{{this.name}}</td>
+                <td>{{this.email}}</td>
+                <td>
+                    <a href="/admin/edit-user/{{this._id}}" class="btn btn-primary m-1">Edit</a>
+                    <a href="/admin/delete-user/{{this._id}}" class="btn btn-danger m-1"
+                        onclick="return confirm('Are you sure to delete {{this.Name}}')">Delete</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

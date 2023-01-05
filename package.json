@@ -1,0 +1,22 @@
+{
+  "name": "project01",
+  "version": "1.0.0",
+  "description": "week6",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon ./index"
+  },
+  "author": "Jauhar",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "express-session": "^1.17.3",
+    "hbs": "^4.2.0",
+    "mongodb": "^4.10.0",
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {}
+}

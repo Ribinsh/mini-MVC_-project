@@ -1,0 +1,27 @@
+<!-- heading -->
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Login page</span>
+  </div>
+</nav>
+<form class="container py-5 my-5" action="/" method="post">
+  <div class="mb-3">
+    <label for="InputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" name="email" id="InputEmail1" aria-describedby="emailHelp" required>
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="InputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" name="password" id="InputPassword1" required>
+  </div>
+  {{#if loginErr}}
+    <p class="error text-danger">{{loginErr}}</p>
+  {{/if}}
+  {{!-- <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="Check1">
+    <label class="form-check-label" for="Check1">remember me</label>
+  </div> --}}
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <a href="/signup" class="px-4 text-decoration-none">Create an account</a>
+
+</form>
